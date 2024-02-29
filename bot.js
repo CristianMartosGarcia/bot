@@ -8,10 +8,10 @@ bot.start((ctx) => {
 
 bot.hears("Hola", ctx => {
     ctx.reply("Como estas " + ctx.from.first_name + " " + ctx.from.last_name + "?", Markup.inlineKeyboard([
-        [Markup.button.callback('😀 Bien', 'bien')],
-        [Markup.button.callback('😐 Regular', 'regular')],
-        [Markup.button.callback('😞 Mal', 'mal')]
-    ], { resize_keyboard: true }));
+        Markup.button.callback('<div style="width: 100%; height: 40px; display: flex; justify-content: center; align-items: center;">😀 Bien</div>', 'bien'),
+        Markup.button.callback('<div style="width: 100%; height: 40px; display: flex; justify-content: center; align-items: center;">😐 Regular</div>', 'regular'),
+        Markup.button.callback('<div style="width: 100%; height: 40px; display: flex; justify-content: center; align-items: center;">😞 Mal</div>', 'mal')
+    ]));
 });
 
 bot.action('bien', (ctx) => {
