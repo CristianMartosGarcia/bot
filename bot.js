@@ -8,9 +8,27 @@ bot.start((ctx) => {
 bot.launch();
 
 bot.hears("Hola", ctx => {
-    
-        ctx.reply("Hola " + ctx.from.first_name + ctx.from.last_name)
-        ctx.reply("Como estas?")
+    ctx.reply("Hola " + ctx.from.first_name + " " + ctx.from.last_name);
+    ctx.reply("Como estas?", Markup.inlineKeyboard([
+        Markup.button.callback('Bien', 'bien'),
+        Markup.button.callback('Regular', 'regular'),
+        Markup.button.callback('Mal', 'mal')
+    ]));
+});
+
+bot.action('bien', (ctx) => {
+    ctx.reply('Me alegro de que estés bien!');
+});
+
+bot.action('regular', (ctx) => {
+    ctx.reply('Espero que mejores pronto.');
+});
+
+bot.action('mal', (ctx) => {
+    ctx.reply('Ánimo, todo mejorará.');
+});
+
+bot.launch();
     
 /*     if(ctx.first_name !== "Pau"){
         ctx.reply("Hola " + ctx.from.first_name+ " Bienvenido");
@@ -24,28 +42,4 @@ bot.hears("Hola", ctx => {
 
     } */
     
-})
 
-// Maneja el comando /menu
-bot.onText(/\/menu/, (msg) => {
-    const chatId = msg.chat.id;
-    const message = "Aquí tienes mi menú:\n1. Opción 1\n2. Opción 2\n3. Opción 3";
-    bot.sendMessage(chatId, message);
-});
-
-// Maneja las respuestas del usuario
-bot.on('message', (msg) => {
-    const chatId = msg.chat.id;
-    const message = msg.text.toString().toLowerCase();
-
-    // Ejemplo de manejo de respuestas
-    if (message === 'opción 1') {
-        bot.sendMessage(chatId, 'Has seleccionado la Opción 1.');
-    } else if (message === 'opción 2') {
-        bot.sendMessage(chatId, 'Has seleccionado la Opción 2.');
-    } else if (message === 'opción 3') {
-        bot.sendMessage(chatId, 'Has seleccionado la Opción 3.');
-    } else {
-        bot.sendMessage(chatId, 'Lo siento, no entiendo esa opción.');
-    }
-});
