@@ -28,9 +28,7 @@ bot.action('mal', (ctx) => {
 
 bot.launch();
 
-/*     if(ctx.first_name !== "Pau"){
-        ctx.reply("Hola " + ctx.from.first_name+ " Bienvenido");
-
+/*    
     1 heroku git:remote -a momvalenciabot
     2 git add .
     3 git commit -am "make it better"
