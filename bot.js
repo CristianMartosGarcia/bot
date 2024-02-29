@@ -11,7 +11,7 @@ bot.hears("Hola", ctx => {
         [Markup.button.callback('😀 Bien', 'bien')],
         [Markup.button.callback('😐 Regular', 'regular')],
         [Markup.button.callback('😞 Mal', 'mal')]
-    ]));
+    ], { resize_keyboard: true }));
 });
 
 bot.action('bien', (ctx) => {
