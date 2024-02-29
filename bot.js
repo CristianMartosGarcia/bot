@@ -8,9 +8,9 @@ bot.start((ctx) => {
 
 bot.hears("Hola", ctx => {
     ctx.reply("Como estas " + ctx.from.first_name + " " + ctx.from.last_name + "?", Markup.inlineKeyboard([
-        Markup.button.callback('😀 Bien', 'bien'),
-        Markup.button.callback('😐 Regular', 'regular'),
-        Markup.button.callback('😞 Mal', 'mal')
+        [Markup.button.callback('😀 Bien', 'bien')],
+        [Markup.button.callback('😐 Regular', 'regular')],
+        [Markup.button.callback('😞 Mal', 'mal')]
     ]));
 });
 
