@@ -8,12 +8,13 @@ bot.start((ctx) => {
 bot.launch();
 
 bot.hears("Hola", ctx => {
-    if(ctx.first_name == "Pau"){
-        ctx.reply("No llores " + ctx.from.first_name + ctx.from.last_name)
-    }
-    if(ctx.first_name !== "Pau"){
+    
+        ctx.reply("Hola " + ctx.from.first_name + ctx.from.last_name)
+        ctx.reply("Como estas?")
+    
+/*     if(ctx.first_name !== "Pau"){
         ctx.reply("Hola " + ctx.from.first_name+ " Bienvenido");
-    }
+    } */
     
 })
 
