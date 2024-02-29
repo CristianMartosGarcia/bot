@@ -11,6 +11,7 @@ bot.hears("Hola", ctx => {
     
         ctx.reply("Hola " + ctx.from.first_name + ctx.from.last_name)
         ctx.reply("Como estas?")
+        ctx.reply("TEST COMMIT")
     
 /*     if(ctx.first_name !== "Pau"){
         ctx.reply("Hola " + ctx.from.first_name+ " Bienvenido");
